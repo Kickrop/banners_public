@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>240x400</title>
+		<script type="text/javascript" src="greensock.js"></script>
+		<meta charset="utf-8">
+		<meta name="ad.size" content="width=240,height=400">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<style>
+			@-webkit-keyframes hvr-wobble-vertical{16.65%{
+			-webkit-transform:translateY(8px);
+			transform:translateY(8px)}33.3%{-webkit-transform:translateY(-6px);
+			transform:translateY(-6px)}49.95%{-webkit-transform:translateY(4px);
+			transform:translateY(4px)}66.6%{-webkit-transform:translateY(-2px);
+			transform:translateY(-2px)}83.25%{-webkit-transform:translateY(1px);
+			transform:translateY(1px)}100%{-webkit-transform:translateY(0);
+			transform:translateY(0)}}
+			@keyframes hvr-wobble-vertical{16.65%{-webkit-transform:translateY(8px);
+			transform:translateY(8px)}33.3%{-webkit-transform:translateY(-6px);
+			transform:translateY(-6px)}49.95%{-webkit-transform:translateY(4px);
+			transform:translateY(4px)}66.6%{-webkit-transform:translateY(-2px);
+			transform:translateY(-2px)}83.25%{-webkit-transform:translateY(1px);
+			transform:translateY(1px)}100%{-webkit-transform:translateY(0);
+			transform:translateY(0)}}.hvr-wobble-vertical{display:inline-block;vertical-align:middle;-webkit-transform:translateZ(0);
+			transform:translateZ(0);box-shadow:0 0 1px transparent;
+			-webkit-backface-visibility:hidden;backface-visibility:hidden;
+			-moz-osx-font-smoothing:grayscale}.hvr-wobble-vertical:active,.hvr-wobble-vertical:focus,.hvr-wobble-vertical:hover{-webkit-animation-name:hvr-wobble-vertical;
+			animation-name:hvr-wobble-vertical;
+			-webkit-animation-duration:1s;
+			animation-duration:1s;
+			-webkit-animation-timing-function:ease-in-out;
+			animation-timing-function:ease-in-out;-webkit-animation-iteration-count:1;animation-iteration-count:1;cursor:pointer}
+@keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;} 
+  100% {background-position: 0px 500px, 200px 200px, 100px 100px;}
+}
+
+@-moz-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  100% {background-position: 0px 500px, 200px 200px, 100px 100px;}
+}
+@-webkit-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  100% {background-position: 0px 500px, 200px 200px, 100px 100px;}
+}
+@-ms-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  100% {background-position: 0px 500px, 200px 200px, 100px 100px;}
+}
+		</style>
+	</head>
+	<body style="margin: 0px; ">
+		<!--<a id="myAdLink" href="%link1%" target="_blank"> -->
+			<div id="myAd" style="width: 240px;height: 400px;position: absolute;overflow:hidden;">								
+				<div id="back0" class="myimg" style="background-image: url(back.jpg);background-repeat: no-repeat;height: 400px;width: 240px;position: absolute;"></div>							
+				<div id="txt1" class="myimg0" style="background-image: url(txt1.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>				
+											
+				<div id="img1" class="myimg" style="background-image: url(img1.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="img2" class="myimg" style="background-image: url(img2.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				
+				<div id="berries1" class="myimg" style="background-image: url(berries1.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="berries2" class="myimg" style="background-image: url(berries2.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>				
+				<div id="bord" style="background-repeat: no-repeat;width: 238px;height: 398px;border:1px solid black;position: absolute;"></div>				
+				<!--<div id="btn" class="hvr-wobble-vertical myimg4 button" style="background-image: url(btn.png);left:10px;top:238px;background-repeat: no-repeat;height: 54px;width: 220px;position: absolute;"></div>	-->			
+			</div>			
+		
+		
+		<script type="text/javascript">
+			window.onload = function(){
+			var tl = new TimelineLite({onComplete:repeatTimeline});
+			//var maxAnimationTime = 26;
+			    tl//.set("#back0", {y:-200})				  
+				  //.from("#title", 0.7, {autoAlpha: 0,ease: Power2.easeIn})
+				  .from("#back0, #img1, #img2, #berries1, #berries2", 0.5, {ease: Power1.easeOut,opacity:0})
+				  .from("#txt1", 0.6, {y:30, autoAlpha: 0,ease: Power1.easeIn})
+				  //.to("#txt1", 0.5, {x:20,ease: Power1.easeOut,opacity:0},"+=1.5")
+				  //.from("#txt2", 0.5, {x:-30, autoAlpha: 0,ease: Power2.easeIn})
+				  //.from("#txt21", 0.5, {autoAlpha: 0,ease: Power2.easeIn},"-=.1")
+				 .to("#img1", 2.4, {x:20,transformOrigin:"0 0",force3D:true},"-=.5")
+				 .to("#img2", 2.1, {x:-20,transformOrigin:"0 0",force3D:true},"-=2.4")
+				  //.to("#img1", 2.4, {left:20},"-=.5")
+				  //.to("#img2", 2.1, {left:-20},"-=2.4")
+				  .from("#berries1", 1.9, {x:-10, ease: Power0.easeIn},"-=1.9")
+				  .from("#berries2", 1.9, {x:-10, ease: Power0.easeIn},"-=1.7")
+				  //.to("#txt2", 0.5, {x:20,ease: Power1.easeOut,opacity:0},"+=1.5")
+				  //.to("#txt21", 0.5, {x:20,ease: Power1.easeOut,opacity:0},"-=.2")
+				  						  
+		  		  //.from("#txt3", 0.5, { autoAlpha: 0,ease: Power2.easeIn})
+				  //.to("#txt3", 0.5, {ease: Power1.easeOut,opacity:0},"+=3")
+				  .to("#back0, #img1, #img2, #berries1, #berries2", 0.5, {ease: Power1.easeOut,opacity:0},"+=2.5");
+				  //.to("#title", 0.5, {ease: Power1.easeOut,opacity:0},"-=.5");
+			      
+			function repeatTimeline(){
+			  tl.restart();
+			}
+			function stop(){
+			  tl.pause();
+			}
+			//TweenLite.delayedCall(maxAnimationTime, stop); 
+			}
+
+		</script>
+		
+		
+		
+	</body>
+</html>
