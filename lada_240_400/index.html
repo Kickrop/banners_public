@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="greensock.js"></script>
+		<meta charset="utf-8">
+		<meta name="ad.size" content="width=240,height=400">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<style>
+			@-webkit-keyframes hvr-wobble-vertical{16.65%{-webkit-transform:translateY(8px);transform:translateY(8px)}33.3%{-webkit-transform:translateY(-6px);transform:translateY(-6px)}49.95%{-webkit-transform:translateY(4px);transform:translateY(4px)}66.6%{-webkit-transform:translateY(-2px);transform:translateY(-2px)}83.25%{-webkit-transform:translateY(1px);transform:translateY(1px)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes hvr-wobble-vertical{16.65%{-webkit-transform:translateY(8px);transform:translateY(8px)}33.3%{-webkit-transform:translateY(-6px);transform:translateY(-6px)}49.95%{-webkit-transform:translateY(4px);transform:translateY(4px)}66.6%{-webkit-transform:translateY(-2px);transform:translateY(-2px)}83.25%{-webkit-transform:translateY(1px);transform:translateY(1px)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}.hvr-wobble-vertical{display:inline-block;vertical-align:middle;-webkit-transform:translateZ(0);transform:translateZ(0);box-shadow:0 0 1px transparent;-webkit-backface-visibility:hidden;backface-visibility:hidden;-moz-osx-font-smoothing:grayscale}.hvr-wobble-vertical:active,.hvr-wobble-vertical:focus,.hvr-wobble-vertical:hover{-webkit-animation-name:hvr-wobble-vertical;animation-name:hvr-wobble-vertical;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-iteration-count:1;animation-iteration-count:1;cursor:pointer}
+		#container {
+			cursor: pointer;
+			width: 240px;
+			height: 400px;
+			position: absolute;
+		}
+		</style>
+	</head>
+	<body style="margin: 0px;">
+			<div id="Stage" style="cursor: pointer; width: 240px;height: 400px;position: absolute;overflow:hidden;">
+				<div id="back" class="myimg" style="background-color:#ffffff;background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="back1" class="myimg" style="background-image: url(back1.jpg);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="pic1" class="myimg1" style="background-image: url(pic1.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>	
+				<div id="pic2" class="myimg1" style="background-image: url(pic2.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>	
+				<div id="pic3" class="myimg1" style="background-image: url(pic3.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>	
+				<div id="pic4" class="myimg1" style="background-image: url(pic4.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>	
+				<div id="pic5" class="myimg1" style="background-image: url(pic5.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>	
+				<div id="pic6" class="myimg1" style="background-image: url(pic6.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>					
+				<div id="txt1" class="myimg1" style="background-image: url(txt1.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="txt2" class="myimg1" style="background-image: url(txt2.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="txt3" class="myimg1" style="background-image: url(txt3.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="txt4" class="myimg1" style="background-image: url(txt4.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="txt5" class="myimg1" style="background-image: url(txt5.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="txt6" class="myimg1" style="background-image: url(txt6.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="c1" class="myimg1" style="background-image: url(c1.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="c2" class="myimg1" style="background-image: url(c2.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="c3" class="myimg1" style="background-image: url(c3.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="c4" class="myimg1" style="background-image: url(c4.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="c5" class="myimg1" style="background-image: url(c5.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="c6" class="myimg1" style="background-image: url(c6.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="disc" class="myimg" style="background-image: url(disc.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>			
+				<div id="bord" style="background-repeat: no-repeat;width: 238px;height: 398px;border:1px solid black;position: absolute;"></div>
+				
+			</div>
+		<script type="text/javascript">
+			//document.addEventListener("DOMContentLoaded", function () {
+			window.onload = function(){
+			var tl = new TimelineLite({onComplete:repeatTimeline});
+			//var maxAnimationTime = 22; //limit the animation time
+			    tl//.set("#", {opacity:0,scale:.7})
+					.from("#txt1", .8, {autoAlpha: 0,ease: Back.easeOut.config(1.7), x: 40})
+					.from("#pic1", .8, {autoAlpha: 0,ease: Back.easeOut.config(1.7), x: 40},"-=.6")
+					.from("#c1", .8, {autoAlpha: 0,ease: Back.easeOut.config(1.7), x: 40},"-=.4")
+					.to("#txt1", 0.6, {autoAlpha: 0,ease: Back.easeOut.config(1.7),x:-100},"+=1.4")
+					.to("#pic1", 0.6, {autoAlpha: 0,ease: Back.easeOut.config(1.7),x:-100},"-=.5")
+					.to("#c1", 0.6, {autoAlpha: 0,ease: Back.easeOut.config(1.7),x:-100},"-=.4")
+					
+					.from("#txt2", .8, {autoAlpha: 0,ease: Back.easeOut.config(1.7), x: 40})
+					.from("#pic2", .8, {autoAlpha: 0,ease: Back.easeOut.config(1.7), x: 40},"-=.6")
+					.from("#c2", .8, {autoAlpha: 0,ease: Back.easeOut.config(1.7), x: 40},"-=.4")
+					.to("#txt2", 0.6, {autoAlpha: 0,ease: Back.easeOut.config(1.7),x:-100},"+=1.4")
+					.to("#pic2", 0.6, {autoAlpha: 0,ease: Back.easeOut.config(1.7),x:-100},"-=.5")
+					.to("#c2", 0.6, {autoAlpha: 0,ease: Back.easeOut.config(1.7),x:-100},"-=.4")
+					
+					.from("#txt3", .8, {autoAlpha: 0,ease: Back.easeOut.config(1.7), x: 40})
+					.from("#pic3", .8, {autoAlpha: 0,ease: Back.easeOut.config(1.7), x: 40},"-=.6")
+					.from("#c3", .8, {autoAlpha: 0,ease: Back.easeOut.config(1.7), x: 40},"-=.4")
+					.to("#txt3", 0.6, {autoAlpha: 0,ease: Back.easeOut.config(1.7),x:-100},"+=1.4")
+					.to("#pic3", 0.6, {autoAlpha: 0,ease: Back.easeOut.config(1.7),x:-100},"-=.5")
+					.to("#c3", 0.6, {autoAlpha: 0,ease: Back.easeOut.config(1.7),x:-100},"-=.4")
+					
+					.from("#txt4", .8, {autoAlpha: 0,ease: Back.easeOut.config(1.7), x: 40})
+					.from("#pic4", .8, {autoAlpha: 0,ease: Back.easeOut.config(1.7), x: 40},"-=.6")
+					.from("#c4", .8, {autoAlpha: 0,ease: Back.easeOut.config(1.7), x: 40},"-=.4")
+					.to("#txt4", 0.6, {autoAlpha: 0,ease: Back.easeOut.config(1.7),x:-100},"+=1.4")
+					.to("#pic4", 0.6, {autoAlpha: 0,ease: Back.easeOut.config(1.7),x:-100},"-=.5")
+					.to("#c4", 0.6, {autoAlpha: 0,ease: Back.easeOut.config(1.7),x:-100},"-=.4")
+					
+					.from("#txt5", .8, {autoAlpha: 0,ease: Back.easeOut.config(1.7), x: 40})
+					.from("#pic5", .8, {autoAlpha: 0,ease: Back.easeOut.config(1.7), x: 40},"-=.6")
+					.from("#c5", .8, {autoAlpha: 0,ease: Back.easeOut.config(1.7), x: 40},"-=.4")
+					.to("#txt5", 0.6, {autoAlpha: 0,ease: Back.easeOut.config(1.7),x:-100},"+=1.4")
+					.to("#pic5", 0.6, {autoAlpha: 0,ease: Back.easeOut.config(1.7),x:-100},"-=.5")
+					.to("#c5", 0.6, {autoAlpha: 0,ease: Back.easeOut.config(1.7),x:-100},"-=.4")
+					
+					.from("#txt6", .8, {autoAlpha: 0,ease: Back.easeOut.config(1.7), x: 40})
+					.from("#pic6", .8, {autoAlpha: 0,ease: Back.easeOut.config(1.7), x: 40},"-=.6")
+					.from("#c6", .8, {autoAlpha: 0,ease: Back.easeOut.config(1.7), x: 40},"-=.4")
+					.to("#txt6", 0.6, {autoAlpha: 0,ease: Back.easeOut.config(1.7),x:-100},"+=1.4")
+					.to("#pic6", 0.6, {autoAlpha: 0,ease: Back.easeOut.config(1.7),x:-100},"-=.5")
+					.to("#c6", 0.6, {autoAlpha: 0,ease: Back.easeOut.config(1.7),x:-100},"-=.4")
+					.from("#disc", .6, {autoAlpha: 0})
+					.to(".myimg0", .5, {opacity:0},"+=3");
+
+			function repeatTimeline(){
+			  tl.restart();
+			}
+			function stop(){
+			  tl.pause();
+			}
+			//TweenLite.delayedCall(maxAnimationTime, stop); //limit the animation time
+			}
+
+		</script>
+	</body>
+</html>
