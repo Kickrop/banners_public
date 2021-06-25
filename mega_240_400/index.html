@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="https://awaps.yandex.net/data/lib/adsdk.js"></script>
+		<script type="text/javascript" src="greensock.js"></script>
+		<script>
+			function getUrlParam(name) {
+			  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+			  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+			  results = regex.exec(location.search);
+			  return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+		</script>		
+		<meta charset="utf-8">
+		<meta name="ad.size" content="width=240,height=400">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<style>
+			@-webkit-keyframes hvr-wobble-vertical{16.65%{-webkit-transform:translateY(8px);transform:translateY(8px)}33.3%{-webkit-transform:translateY(-6px);transform:translateY(-6px)}49.95%{-webkit-transform:translateY(4px);transform:translateY(4px)}66.6%{-webkit-transform:translateY(-2px);transform:translateY(-2px)}83.25%{-webkit-transform:translateY(1px);transform:translateY(1px)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes hvr-wobble-vertical{16.65%{-webkit-transform:translateY(8px);transform:translateY(8px)}33.3%{-webkit-transform:translateY(-6px);transform:translateY(-6px)}49.95%{-webkit-transform:translateY(4px);transform:translateY(4px)}66.6%{-webkit-transform:translateY(-2px);transform:translateY(-2px)}83.25%{-webkit-transform:translateY(1px);transform:translateY(1px)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}.hvr-wobble-vertical{display:inline-block;vertical-align:middle;-webkit-transform:translateZ(0);transform:translateZ(0);box-shadow:0 0 1px transparent;-webkit-backface-visibility:hidden;backface-visibility:hidden;-moz-osx-font-smoothing:grayscale}.hvr-wobble-vertical:active,.hvr-wobble-vertical:focus,.hvr-wobble-vertical:hover{-webkit-animation-name:hvr-wobble-vertical;animation-name:hvr-wobble-vertical;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-iteration-count:1;animation-iteration-count:1;cursor:pointer}
+			.asset {
+				//margin:auto;
+				background-repeat: no-repeat;
+				//width: 100%;
+				//height: 100%;
+				width: 240px;
+				height: 400px;
+				position: absolute;
+			}
+			#stage {
+				//margin: 0 auto;
+				//cursor: pointer; 
+				width: 240px;
+				height: 400px;
+				position: absolute;
+				overflow: hidden;
+			}
+			/*.button {
+				background-image: url(btn.png);
+				background-position: 0 0;
+				width: 135px;
+				height: 31px;
+				position: absolute;
+				top: 310px;
+				left: 53px;
+				z-index: 101;
+			}
+			.button:hover {
+				background-position: 0 31px;
+			}*/
+			#back1 {background-image: url(back1.png);}
+			#pic1 {background-image: url(pic1.png);}
+			#pic2 {background-image: url(pic2.png);}
+			#txt1 {background-image: url(txt1.png);}
+			#txt11 {background-image: url(txt11.png);}
+			#txt111 {background-image: url(txt111.png);}
+			#txt2 {background-image: url(txt2.png);}
+			#flash {background-image: url(flash.png);}
+			#camera {background-image: url(camera.png);}
+			#logo {background-image: url(logo.png);}
+			#logobig {background-image: url(logobig.png);}
+		</style>
+	</head>
+	<body style="margin: 0px;">
+	<a id="click1_area" href="#" target="_blank">
+		<div id="stage">
+			<div id="back" style="background-color:#000;background-repeat: no-repeat;height: 400px;width: 240px;position: absolute;">
+				<div id="bord" style="cursor: pointer; z-index: 100; width: 100%;height: 100%;border:1px solid #000;position: absolute; box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;"></div>
+			</div>			
+			<div id="back1" class="asset" style=""></div>						
+			<div id="pic1" class="asset" style=""></div>	
+			<div id="pic2" class="asset" style=""></div>	
+			<div id="flash" class="asset" style=""></div>
+			<div id="camera" class="asset" style=""></div>
+			<div id="txt1" class="asset" style=""></div>
+			<div id="txt11" class="asset" style=""></div>
+			<div id="txt111" class="asset" style=""></div>
+			<div id="txt2" class="asset" style=""></div>
+			<div id="logo" class="asset" style=""></div>
+			<div id="logobig" class="asset" style=""></div>
+			<!-- <div id="btn" class="hvr-wobble-vertical myimg2 button" style=""></div> -->
+			<!-- <div id="pointer" class="asset" style="background-image: url(pointer.png);background-size:70%;background-repeat: no-repeat;top:251px;left:200px;height: 48px; width: 48px;position: absolute;"></div> -->
+				<!-- <div id="pointer" class="asset" style="background-image: url(pointer.png);background-repeat: no-repeat;top:211px;left:169px;height: 48px; width: 48px;position: absolute;"></div> -->
+		</div>
+	</a>
+		<script>
+				document.getElementById("click1_area").href = getUrlParam('link1');
+		</script>
+		<script type="text/javascript">
+			document.addEventListener("DOMContentLoaded", function () {
+			var tl = new TimelineLite({onComplete:repeatTimeline});
+			var maxAnimationTime = 26.5; //limit the animation time
+			    tl//.set("#", {opacity:0,scale:.7})
+					.set("#camera", {opacity:0.5})
+					//.from("#back1", .9, {autoAlpha: 0})
+					.from("#pic1,#logo,#txt1", .9, {autoAlpha: 0})
+					.from("#txt11,#txt111", .9, {autoAlpha: 0,y:10})
+					.from("#pic2", .9, {autoAlpha: 0, x:-10,y: 30, ease: Power3.easeOut},"-=.1")
+					.from("#flash", .2, {autoAlpha: 0})
+					.from("#camera", .2, {autoAlpha: 0},"-=.2")
+					.to("#flash, #camera", 0.1, {autoAlpha: 0})								
+					.to("#txt1, #txt11, #txt111", 0.5, {autoAlpha: 0},"+=1.8")
+					.from("#txt2", .9, {autoAlpha: 0, scale: .8})		
+					.to("#pic1,#pic2,#txt2,#logo", 0.5, {autoAlpha: 0},"+=1.8")
+					.from("#logobig", .9, {autoAlpha: 0},"-=.3")
+					.to("#logobig", 0.5, {autoAlpha: 0},"+=2.7");
+			//tl.play(10);
+			function repeatTimeline(){
+			  tl.restart();
+			}
+			function stop(){
+			  tl.pause();
+			}
+			TweenLite.delayedCall(maxAnimationTime, stop); //limit the animation time
+			});
+		</script>
+	</body>
+</html>
