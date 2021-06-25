@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="greensock.js"></script>
+		<meta charset="utf-8">
+		<meta name="ad.size" content="width=240,height=400">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<style>
+			@-webkit-keyframes hvr-wobble-vertical{16.65%{-webkit-transform:translateY(8px);transform:translateY(8px)}33.3%{-webkit-transform:translateY(-6px);transform:translateY(-6px)}49.95%{-webkit-transform:translateY(4px);transform:translateY(4px)}66.6%{-webkit-transform:translateY(-2px);transform:translateY(-2px)}83.25%{-webkit-transform:translateY(1px);transform:translateY(1px)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes hvr-wobble-vertical{16.65%{-webkit-transform:translateY(8px);transform:translateY(8px)}33.3%{-webkit-transform:translateY(-6px);transform:translateY(-6px)}49.95%{-webkit-transform:translateY(4px);transform:translateY(4px)}66.6%{-webkit-transform:translateY(-2px);transform:translateY(-2px)}83.25%{-webkit-transform:translateY(1px);transform:translateY(1px)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}.hvr-wobble-vertical{display:inline-block;vertical-align:middle;-webkit-transform:translateZ(0);transform:translateZ(0);box-shadow:0 0 1px transparent;-webkit-backface-visibility:hidden;backface-visibility:hidden;-moz-osx-font-smoothing:grayscale}.hvr-wobble-vertical:active,.hvr-wobble-vertical:focus,.hvr-wobble-vertical:hover{-webkit-animation-name:hvr-wobble-vertical;animation-name:hvr-wobble-vertical;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-iteration-count:1;animation-iteration-count:1;cursor:pointer}
+		/*#btn {
+			background-image: url(btn.png);
+			left:29px;
+			top:199px;
+			background-repeat: no-repeat;
+			height: 44px;
+			width: 179px;
+			position: absolute;
+		}
+		#btn:hover {
+			background-image: url(btnhov.png);
+		}*/
+		#back1 {
+			background-image: url(back1.jpg);
+			background-repeat: no-repeat;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+		}
+
+		</style>
+	</head>
+	<body style="margin: 0px;">
+			<div id="Stage" style="cursor: pointer; width: 240px;height: 400px;position: absolute;overflow:hidden;">
+				<div id="back" class="myimg" style="background-color:#000;background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="back1" class="myimg" style=""></div>
+				<div id="back2" class="myimg" style="background-image: url(back2.jpg);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>							
+				<div id="pic1" class="myimg1" style="background-image: url(pic1.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>	
+				<div id="pic2" class="myimg1" style="background-image: url(pic2.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>					
+				<div id="txt1" class="myimg1" style="background-image: url(txt1.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="txt2" class="myimg1" style="background-image: url(txt2.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="txt3" class="myimg1" style="background-image: url(txt3.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>											
+				<div id="disc" class="myimg1" style="background-image: url(disc.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>			 -->
+				<div id="bord" style="background-repeat: no-repeat;top:0; box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;width: 100%;height: 100%;border:1px solid black;position: absolute;"></div>
+				<!-- <div id="btn" class="hvr-wobble-vertical myimg2 button" style=""></div>
+				<div id="pointer" class="myimg1" style="background-image: url(pointer.png);background-size:70%;background-repeat: no-repeat;top:251px;left:200px;height: 48px; width: 48px;position: absolute;"></div> -->
+				<!--<div id="pointer" class="myimg1" style="background-image: url(pointer.png);background-repeat: no-repeat;top:211px;left:169px;height: 48px; width: 48px;position: absolute;"></div>-->
+			</div>
+		<script type="text/javascript">
+			document.addEventListener("DOMContentLoaded", function () {
+			var tl = new TimelineLite({onComplete:repeatTimeline});
+			//var maxAnimationTime = 22; //limit the animation time
+			    tl//.set("#", {opacity:0,scale:.7})
+					.set("#pointer", {opacity:0})
+					.from("#back1", .9, {autoAlpha: 0})
+					.from("#pic1", .9, {autoAlpha: 0, ease: Back.easeOut.config(1.1), x:-30},"-=.5")
+					.from("#txt1", .9, {autoAlpha: 0},"-=.9")										
+					.to("#pic1", 0.5, {autoAlpha: 0},"+=.4")
+					.from("#txt2", .9, {autoAlpha: 0, x: -20},"-=.5")					
+					.from("#pic2", .9, {autoAlpha: 0, ease: Back.easeOut.config(1.1), x:-30},"-=.5")
+					.from("#txt3", .9, {autoAlpha: 0, x: -20},"-=.5")
+					.to("#pic1", 0.5, {autoAlpha: 1},"+=1.9")
+					.to("#pic2,#txt2", 0.5, {autoAlpha: 0},"-=.5")
+					.to("#txt3", 0.5, {autoAlpha: 0},"-=.5")
+					.from("#disc", .6, {autoAlpha: 0},"-=.6")					
+					.to("#disc,#txt1,#pic1,#back1", 0.5, {autoAlpha: 0},"+=2.7");
+			//tl.play(10);
+			function repeatTimeline(){
+			  tl.restart();
+			}
+			function stop(){
+			  tl.pause();
+			}
+			//TweenLite.delayedCall(maxAnimationTime, stop); //limit the animation time
+			});
+
+		</script>
+	</body>
+</html>
