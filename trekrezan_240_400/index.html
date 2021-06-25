@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!-- ADRIME SCREENAD META DATA (don't edit/remove) -->
+    <!-- SCRVERSION: screenad_interface_1.0.3 -->
+    <!-- SCRFORMAT: banner -->
+    <!-- SCRWIDTH: 240 -->
+    <!-- SCRHEIGHT: 400 -->
+
+		<script type="text/javascript" src="greensock.js"></script>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="//media.adrcdn.com/scripts/screenad_interface_1.0.3_scrambled.js"></script>
+		<meta name="ad.size" content="width=240,height=400">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<style>
+			@-webkit-keyframes hvr-wobble-vertical{16.65%{-webkit-transform:translateY(8px);transform:translateY(8px)}33.3%{-webkit-transform:translateY(-6px);transform:translateY(-6px)}49.95%{-webkit-transform:translateY(4px);transform:translateY(4px)}66.6%{-webkit-transform:translateY(-2px);transform:translateY(-2px)}83.25%{-webkit-transform:translateY(1px);transform:translateY(1px)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes hvr-wobble-vertical{16.65%{-webkit-transform:translateY(8px);transform:translateY(8px)}33.3%{-webkit-transform:translateY(-6px);transform:translateY(-6px)}49.95%{-webkit-transform:translateY(4px);transform:translateY(4px)}66.6%{-webkit-transform:translateY(-2px);transform:translateY(-2px)}83.25%{-webkit-transform:translateY(1px);transform:translateY(1px)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}.hvr-wobble-vertical{display:inline-block;vertical-align:middle;-webkit-transform:translateZ(0);transform:translateZ(0);box-shadow:0 0 1px transparent;-webkit-backface-visibility:hidden;backface-visibility:hidden;-moz-osx-font-smoothing:grayscale}.hvr-wobble-vertical:active,.hvr-wobble-vertical:focus,.hvr-wobble-vertical:hover{-webkit-animation-name:hvr-wobble-vertical;animation-name:hvr-wobble-vertical;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-iteration-count:1;animation-iteration-count:1;cursor:pointer}
+		#container {
+			cursor: pointer;
+			width: 240px;
+			height: 400px;
+			position: absolute;
+		}
+		</style>
+	</head>
+	<body style="margin: 0px;">
+		<div id="container" onclick="screenad.click()">
+			<div id="Stage" style="cursor: pointer; width: 240px;height: 400px;position: absolute;overflow:hidden;">
+				<div id="back" class="myimg" style="background-color:#ffffff;background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="back1" class="myimg" style="background-image: url(back1.jpg);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="back2" class="myimg1" style="background-image: url(back2.jpg);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="pic21" class="myimg1" style="background-image: url(pic21.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="pic22" class="myimg1" style="background-image: url(pic22.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="txt0" class="myimg1" style="background-image: url(txt0.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="txt1" class="myimg1" style="background-image: url(txt1.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="txt2" class="myimg1" style="background-image: url(txt2.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="txt21" class="myimg1" style="background-image: url(txt21.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="txt22" class="myimg1" style="background-image: url(txt22.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="bottom" class="myimg" style="background-image: url(bottom.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="bottom2" class="myimg" style="background-image: url(bottom2.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="k1" class="myimg" style="background-image: url(kolesa.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="bottom3" class="myimg1" style="background-image: url(bottom3.png);background-repeat: no-repeat;height: 100%;width: 100%;position: absolute;"></div>
+				<div id="bord" style="background-repeat: no-repeat;width: 238px;height: 398px;border:1px solid black;position: absolute;"></div>
+				<!--<div id="btn" class="hvr-wobble-vertical myimg2 button" style="background-image: url(btn.png);left:18px;top:130px;background-repeat: no-repeat;height: 72px;width: 207px;position: absolute;"></div>-->
+			</div>
+		</div>
+		<script type="text/javascript">
+			document.addEventListener("DOMContentLoaded", function () {
+			var tl = new TimelineLite({onComplete:repeatTimeline});
+			var maxAnimationTime = 26; //limit the animation time
+			    tl//.set("#pic3", {opacity:0,scale:.7})
+					.from("#bottom2", 0.6, {y:20,autoAlpha: 0})
+					.from("#k1", 0.9, {autoAlpha: 0, x:-30},"-=.4")
+					.from("#back2", 0.6, {autoAlpha: 0},"+=2.2")
+					.to("#k1", 0.9, {x:100,y:80},"-=.4")
+					.to("#bottom2", 0.9, {autoAlpha: 0,y:80},"-=.9")
+					.from("#txt0", 1.6, {x:-240,ease: Power4.easeOut},"-=.9")
+				    .from("#txt1", 1.6, {x:-240,ease: Power4.easeOut},"-=1.2")
+					.to("#txt0, #txt1", 0.9, {autoAlpha: 0,x:-240},"+=1.9")
+					.to("#k1", 0.9, {autoAlpha: 0},"-=.9")
+					.from("#bottom3", 0.6, {autoAlpha: 0,y:50},"-=.5")
+					.from("#txt2", 0.6, {autoAlpha: 0,x:50},"-=.5")
+					.from("#pic21", 0.6, {autoAlpha: 0},"-=.2")
+					.from("#txt21", 0.6, {autoAlpha: 0},"-=.2")
+					.from("#pic22", 0.6, {autoAlpha: 0},"+=.3")
+					.from("#txt22", 0.6, {autoAlpha: 0},"-=.2")
+					.to(".myimg1", .5, {scale:1,opacity:0},"+=3.6");
+
+			function repeatTimeline(){
+			  tl.restart();
+			}
+			function stop(){
+			  tl.pause();
+			}
+			TweenLite.delayedCall(maxAnimationTime, stop); //limit the animation time
+			});
+
+		</script>
+	</body>
+</html>
