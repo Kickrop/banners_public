@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="greensock.js"></script>
+		<meta charset="utf-8">
+		<meta name="ad.size" content="width=240,height=400">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<script type="text/javascript"> var clickTag = ""; </script>
+		<style>
+			@-webkit-keyframes hvr-wobble-vertical{16.65%{-webkit-transform:translateY(8px);transform:translateY(8px)}33.3%{-webkit-transform:translateY(-6px);transform:translateY(-6px)}49.95%{-webkit-transform:translateY(4px);transform:translateY(4px)}66.6%{-webkit-transform:translateY(-2px);transform:translateY(-2px)}83.25%{-webkit-transform:translateY(1px);transform:translateY(1px)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes hvr-wobble-vertical{16.65%{-webkit-transform:translateY(8px);transform:translateY(8px)}33.3%{-webkit-transform:translateY(-6px);transform:translateY(-6px)}49.95%{-webkit-transform:translateY(4px);transform:translateY(4px)}66.6%{-webkit-transform:translateY(-2px);transform:translateY(-2px)}83.25%{-webkit-transform:translateY(1px);transform:translateY(1px)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}.hvr-wobble-vertical{display:inline-block;vertical-align:middle;-webkit-transform:translateZ(0);transform:translateZ(0);box-shadow:0 0 1px transparent;-webkit-backface-visibility:hidden;backface-visibility:hidden;-moz-osx-font-smoothing:grayscale}.hvr-wobble-vertical:active,.hvr-wobble-vertical:focus,.hvr-wobble-vertical:hover{-webkit-animation-name:hvr-wobble-vertical;animation-name:hvr-wobble-vertical;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-iteration-count:1;animation-iteration-count:1;cursor:pointer}
+			.asset {
+				//margin:auto;
+				background-repeat: no-repeat;
+				//width: 100%;
+				//height: 100%;
+				width: 240px;
+				height: 400px;
+				position: absolute;
+			}
+			#stage {
+				//margin: 0 auto;
+				//cursor: pointer; 
+				width: 240px;
+				height: 400px;
+				position: absolute;
+				overflow: hidden;
+			}
+			/*.button {
+				background-image: url(btn.png);
+				background-color: #d6d6d8;
+				background-position: 0 0;
+				width: 150px;
+				height: 34px;
+				position: absolute;
+				top: 263px;
+				left: 45.5px;
+				z-index: 101;
+			}*/
+			#btn {
+				background-image: url(btn.png);
+				background-position: 0 0;
+				width: 200px;
+				height: 59px;
+				position: absolute;
+				top: 267px;
+				left: 20px;
+				z-index: 101;
+			}
+			#btn:hover {
+				top:257px;
+				/*background-position: 0 34px;*/
+				transition: .3s;
+				/*box-shadow: 1px 1px 3px #680018;*/
+				/*border: 1px solid #fff;*/
+				/*border-radius: 9px;*/
+			}
+		#pointer {
+				background-image: url(pointer.png);
+				background-position: 0 0;
+				width: 36px;
+				height: 36px;
+				left: 107px;
+				top: 314px;
+				position: absolute;
+				z-index: 102;
+			}
+			#back1 {background-image: url(back1.jpg);}
+			#back2 {background-image: url(back2.jpg);}
+			#back3 {background-image: url(back3.jpg);}
+			#card {background-image: url(card.png);}
+			#pic1 {background-image: url(pic1.jpg);top: 165px;}
+			#pic2 {background-image: url(pic2.png);}
+			#pic3 {background-image: url(pic3.png);}
+			#pic4 {background-image: url(pic4.png);}
+			#pic5 {background-image: url(pic5.png);}
+			#krug {background-image: url(krug.png);}
+			#strelka {background-image: url(strelka.png);left: 86px;top: 242px;}
+			#txt1 {background-image: url(txt1.png);}
+			#txt2 {background-image: url(txt2.png);}
+			#txt3 {background-image: url(txt3.png);}
+			#txt4 {background-image: url(txt4.png);}
+			#txt5 {background-image: url(txt5.png);}
+			#txt11 {background-image: url(txt11.png);}
+		</style>
+	</head>
+	<body style="margin: 0px;">
+		<div id="stage" onclick='window.open(window.clickTag); return false;' target="_blank">
+			<div id="back" style="background-color:#fff;background-repeat: no-repeat;height: 400px;width: 240px;position: absolute;">
+				<div id="bord" style="cursor: pointer; z-index: 100; width: 100%;height: 100%;border:1px solid #000;position: absolute; box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;"></div>
+			</div>			
+			<div id="back1" class="asset" style=""></div>
+			<div id="back2" class="asset" style=""></div>
+			<div id="back3" class="asset" style=""></div>
+			<div id="txt1" class="asset" style=""></div>
+			<div id="txt11" class="asset" style=""></div>
+			<div id="txt2" class="asset" style=""></div>
+			<div id="txt3" class="asset" style=""></div>
+			<div id="txt4" class="asset" style=""></div>
+			<div id="txt5" class="asset" style=""></div>
+			<div id="pic1" class="asset" style=""></div>
+			<div id="strelka" class="asset" style="height: 140px;width: 140px;z-index: 1;"></div>
+			<div id="krug" class="asset" style=""></div>
+			<div id="pic2" class="asset" style=""></div>
+			<div id="pic3" class="asset" style=""></div>
+			<div id="pic4" class="asset" style=""></div>
+			<div id="pic5" class="asset" style=""></div>
+			<div id="card" class="asset" style="z-index: 2;"></div>
+			<div id="pointer" class="asset" style=""></div>
+			<div id="white" class="" style="background-color: #fff;width: 100%;height: 100%;position: absolute;z-index: 102;"></div>
+			< <div id="btn" class="11hvr-wobble-vertical myimg2 button" style="">
+				<!-- <div id="btntxt" class="" style=""></div>
+					<div id="blic" style="width: 12px;height: 44px;background: #fff;opacity: .5;top:-5px;left: -20px;
+					position: absolute;transform: rotate(17deg);">
+					</div> -->
+			</div> 
+			<!-- <div id="btntxt" class="" style=""></div> -->
+		</div>
+		<script type="text/javascript">
+			window.onload = function(){
+			var tl = new TimelineLite({onComplete:repeatTimeline});
+			//var maxAnimationTime = 22; //limit the animation time
+			    tl//.set("#", {opacity:0,scale:.7})
+					//.set("#neon2", {x: -230, y: -100})
+					.to("#white", .5, {autoAlpha: 0})
+					.set("#back1,#pic1,#strelka", {autoAlpha: 1})
+					.to("#strelka", .8, {rotation: 260,ease: Power3.easeOut})
+					.from("#card", 1.2, {autoAlpha: 0, scale: .9})
+					//.from("#neon", 2.2, {ease: Power3.easeIn,autoAlpha: 0},"-=1.7")
+					.from("#txt1", .5, {ease: Power3.easeIn,autoAlpha: 0},"-=.9")
+					.to("#pic1,#card,#strelka,#txt1", .8, {autoAlpha: 0,ease: Power3.easeOut},"+=1.5")
+
+
+					.from("#txt11", 0.7, {autoAlpha: 0,ease: Power1.easeOut},"-=.5")
+					.from("#krug", 0.7, {autoAlpha: 0},"-=.5")
+					.from("#pic2", 0.7, {autoAlpha: 0,x:20,ease: Power1.easeOut},"-=.5")
+					.from("#txt2", 0.7, {autoAlpha: 0,x:20,ease: Power1.easeOut},"-=.5")
+					.to("#txt2,#pic2", .5, {autoAlpha: 0,x:-20,ease: Power3.easeOut},"+=1.2")
+
+					.from("#pic3", 0.7, {autoAlpha: 0,x:20,ease: Power1.easeOut},"-=.5")
+					.from("#txt3", 0.7, {autoAlpha: 0,x:20,ease: Power1.easeOut},"-=.5")
+					.to("#txt3,#pic3", .5, {autoAlpha: 0,x:-20,ease: Power3.easeOut},"+=1.2")
+
+					.from("#pic4", 0.7, {autoAlpha: 0,x:20,ease: Power1.easeOut},"-=.5")
+					.from("#txt4", 0.7, {autoAlpha: 0,x:20,ease: Power1.easeOut},"-=.5")
+					.to("#txt4,#pic4", .5, {autoAlpha: 0,x:-20,ease: Power3.easeOut},"+=1.2")
+
+					.from("#pic5", 0.7, {autoAlpha: 0,x:20,ease: Power1.easeOut},"-=.5")
+					.from("#txt5", 0.7, {autoAlpha: 0,x:20,ease: Power1.easeOut},"-=.5")
+					.to("#txt5,#pic5,#krug,#txt11", .5, {autoAlpha: 0,ease: Power3.easeOut},"+=1.2")
+
+					.from("#back2", 1.2, {autoAlpha: 0},"-=.5")
+					.to("#card", .8, {y:-70,autoAlpha: 1,ease: Power3.easeOut},"-=.5")
+					.from("#btn", 1.2, {autoAlpha: 0},"-=.5")
+					.from("#pointer", .6, {y:15,autoAlpha: 0},"-=.5")
+					.to("#back2,#card,#btn,#pointer", .5, {autoAlpha: 0,ease: Power3.easeOut},"+=1.2")
+
+					.from("#back3", .5, {autoAlpha: 0},"-=.4")
+					.to("#white", .9, {autoAlpha: 1,ease: Power3.easeOut},"+=3");
+					//.to("#neon2", .5, {x:-220,ease: Power3.easeOut},"-=1");
+					//.to("#pic4", 0.5, {autoAlpha: 0},"+=.8")
+					//.to(".asset,#btn", 0.5, {autoAlpha: 0},"+=2.8");
+			//tl2.to(".button", .3, {scale: 1.1},"+=2.5")
+			//	.to(".button", .3, {scale: 1},"+=.3")
+			//tl.pause(11);
+			//tl.play(10);
+			function repeatTimeline(){
+			  tl.restart();
+			}
+			function stop(){
+			  tl.pause();
+			}
+			//TweenLite.delayedCall(maxAnimationTime, stop); //limit the animation time
+			};
+		</script>
+	</body>
+</html>
